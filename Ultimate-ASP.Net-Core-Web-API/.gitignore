@@ -8,6 +8,10 @@ nupkg/
 # Visual Studio Code
 .vscode
 
+# Logger Service
+internal_logs/
+logs/
+
 # Rider
 .idea
 
