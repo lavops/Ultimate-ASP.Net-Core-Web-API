@@ -35,6 +35,7 @@ namespace Ultimate_ASP.Net_Core_Web_API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // Order of adding different middlewares to the application builder is very important.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
