@@ -7,8 +7,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using NLog;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Ultimate_ASP.Net_Core_Web_API.Extensions;
@@ -19,6 +21,8 @@ namespace Ultimate_ASP.Net_Core_Web_API
     {
         public Startup(IConfiguration configuration)
         {
+            // Configure Nlog with nlog.config
+            LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
             Configuration = configuration;
         }
 
@@ -30,6 +34,12 @@ namespace Ultimate_ASP.Net_Core_Web_API
             // Added CORS and IIS configuration to the ConfigurationServices method
             services.ConfigureCors();
             services.ConfigureIISIntegration();
+
+            // Add LoggerService inside .NET
+            // AddScoped (ILoggerManager from Contracts and LoggerManager from LoggerService)
+            // Every time we want to use a logger service, all we need to do is to inject it into constructor of the class that needs it.
+            // Dependency Injection
+            services.ConfigureLoggerService();
 
             services.AddControllers();
         }
