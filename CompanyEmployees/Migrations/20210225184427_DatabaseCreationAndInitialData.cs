@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CompanyEmployees.Migrations
 {
-    public partial class DatabaseCreation : Migration
+    public partial class DatabaseCreationAndInitialData : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -41,6 +41,31 @@ namespace CompanyEmployees.Migrations
                         principalColumn: "CompanyId",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Companies",
+                columns: new[] { "CompanyId", "Address", "Country", "Name" },
+                values: new object[] { new Guid("b3a56076-8ef3-418b-8764-931a6bd19ace"), "583 Wall Dr. Gwynn Oak, MD 21207", "USA", "IT_Solutions Ltd" });
+
+            migrationBuilder.InsertData(
+                table: "Companies",
+                columns: new[] { "CompanyId", "Address", "Country", "Name" },
+                values: new object[] { new Guid("01a47ac2-cab8-40d8-b44e-93d02e50d605"), "313 Forest Avenue, BF 923", "USA", "Admin_Solutions Ltd" });
+
+            migrationBuilder.InsertData(
+                table: "Employees",
+                columns: new[] { "EmployeeId", "Age", "CompanyId", "Name", "Position" },
+                values: new object[] { new Guid("95c117ba-3e58-4b37-a2f8-dd0b573c212d"), 26, new Guid("b3a56076-8ef3-418b-8764-931a6bd19ace"), "Sam Raiden", "Software developer" });
+
+            migrationBuilder.InsertData(
+                table: "Employees",
+                columns: new[] { "EmployeeId", "Age", "CompanyId", "Name", "Position" },
+                values: new object[] { new Guid("6c780611-089a-4033-be80-83cf0998ea35"), 30, new Guid("b3a56076-8ef3-418b-8764-931a6bd19ace"), "Jana McLeaf", "Software developer" });
+
+            migrationBuilder.InsertData(
+                table: "Employees",
+                columns: new[] { "EmployeeId", "Age", "CompanyId", "Name", "Position" },
+                values: new object[] { new Guid("4abf4778-4b19-4e6a-b9c5-fb970d79f10d"), 35, new Guid("01a47ac2-cab8-40d8-b44e-93d02e50d605"), "Kane Miller", "Administrator" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Employees_CompanyId",
