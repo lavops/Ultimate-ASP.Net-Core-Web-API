@@ -13,10 +13,12 @@ namespace CompanyEmployees.Controllers
     public class WeatherForecastController : ControllerBase
     {
         private ILoggerManager _logger;
+        private readonly IRepositoryManager _repository;
 
-        public WeatherForecastController(ILoggerManager logger)
+        public WeatherForecastController(ILoggerManager logger, IRepositoryManager repository)
         {
             _logger = logger;
+            _repository = repository;
         }
 
         [HttpGet]
@@ -26,6 +28,8 @@ namespace CompanyEmployees.Controllers
             _logger.LogDebug("Debug message from our controller.");
             _logger.LogWarn("Warn message from our controller.");
             _logger.LogError("Error message from our controller.");
+
+            
 
             return new string[] { "value1", "value2" };
         }

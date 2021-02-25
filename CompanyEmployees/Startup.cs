@@ -44,6 +44,9 @@ namespace CompanyEmployees
             // IoC (Inversion of Control)
             services.ConfigureSqlContext(Configuration);
 
+            // Repository Manager
+            services.ConfigureRepositoryManager();
+
             services.AddControllers();
         }
 
