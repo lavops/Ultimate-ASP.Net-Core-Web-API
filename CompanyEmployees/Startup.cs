@@ -41,6 +41,9 @@ namespace CompanyEmployees
             // Dependency Injection
             services.ConfigureLoggerService();
 
+            // IoC (Inversion of Control)
+            services.ConfigureSqlContext(Configuration);
+
             services.AddControllers();
         }
 
