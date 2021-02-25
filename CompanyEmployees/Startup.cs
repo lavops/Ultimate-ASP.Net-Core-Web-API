@@ -13,9 +13,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Ultimate_ASP.Net_Core_Web_API.Extensions;
+using CompanyEmployees.Extensions;
 
-namespace Ultimate_ASP.Net_Core_Web_API
+namespace CompanyEmployees
 {
     public class Startup
     {

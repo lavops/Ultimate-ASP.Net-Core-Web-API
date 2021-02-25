@@ -1,6 +1,6 @@
 using System;
 
-namespace Ultimate_ASP.Net_Core_Web_API
+namespace CompanyEmployees
 {
     public class WeatherForecast
     {

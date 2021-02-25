@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Ultimate_ASP.Net_Core_Web_API
+namespace CompanyEmployees
 {
     public class Program
     {

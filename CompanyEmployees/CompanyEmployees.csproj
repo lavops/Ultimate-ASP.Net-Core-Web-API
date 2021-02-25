@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>Ultimate_ASP.Net_Core_Web_API</RootNamespace>
+    <RootNamespace>CompanyEmployees</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
